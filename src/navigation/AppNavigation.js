@@ -1,11 +1,11 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Icon } from "react-native-elements";
-import { ProductsScreen } from "../screens/ProductsScreen";
-import { FavoritesScreen } from "../screens/FavoritesScreen";
-import { RankingScreen } from "../screens/RankingScreen";
-import { SearchScreen } from "../screens/SearchScreen";
-import { AccountScreen } from "../screens/AccountScreen";
-import { screen } from "../utils"
+import { ProductStack } from "./ProductStack";
+import { FavoriteStack } from "./FavoriteStack";
+import { RankingStack } from "./RankingStack";
+import { SearchStack } from "./SearchStack";
+import { AccountStack } from "./AccountStack";
+import { screen } from "../utils";
 
 const Tab = createBottomTabNavigator();
 
@@ -13,16 +13,17 @@ export function AppNavigation() {
     return (
         <Tab.Navigator 
             screenOptions={({route}) => ({
+                headerShown:false,
                 tabBarActiveTintColor: "#00A680",
                 tabBarInactiveTintColor: "#646464",
                 tabBarIcon: ({color,size}) => tabScreenOptions(route, color, size),
             })}
         >
-            <Tab.Screen name={screen.product.tab} component={ProductsScreen} options={{title: "Products"}}/>
-            <Tab.Screen name={screen.favorite.tab} component={FavoritesScreen} options={{title: "Favorites"}}/>
-            <Tab.Screen name={screen.ranking.tab} component={RankingScreen} options={{title: "Rankings"}}/>
-            <Tab.Screen name={screen.search.tab} component={SearchScreen} options={{title: "Search"}}/>
-            <Tab.Screen name={screen.account.tab} component={AccountScreen} options={{title: "Account"}}/>
+            <Tab.Screen name={screen.product.tab} component={ProductStack} options={{title: "Products"}}/>
+            <Tab.Screen name={screen.favorite.tab} component={FavoriteStack} options={{title: "Favorites"}}/>
+            <Tab.Screen name={screen.ranking.tab} component={RankingStack} options={{title: "Rankings"}}/>
+            <Tab.Screen name={screen.search.tab} component={SearchStack} options={{title: "Search"}}/>
+            <Tab.Screen name={screen.account.tab} component={AccountStack} options={{title: "Account"}}/>
         </Tab.Navigator>
     );
 }

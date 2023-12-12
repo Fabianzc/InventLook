@@ -1,22 +1,30 @@
 const productStack = {
-    tab: "ProductsTab"
+    tab: "ProductsTab",
+    products: "Products",
+    addProduct: "AddProduct",
 };
 
 const FavoriteStack = {
-    tab: "FavoritesTab"
+    tab: "FavoritesTab",
+    favorites: "Favoritess",
 };
 
 const rankingStack = {
-    tab: "RankingTab"
+    tab: "RankingTab",
+    ranking: "Ranking",
 };
 
 const searchStack = {
-    tab: "SearchTab"
+    tab: "SearchTab",
+    search: "Search"
 };
 
 const accountStack = {
-    tab: "AccountTab"
+    tab: "AccountTab",
+    account: "Account",
+    login: "Login",
 };
+
 
 export const screen = {
     product: productStack,
